@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Navbar.css';
 import Logo from './assets/image/mcb2 logo.png';
 // import Button from '@mui/material/Button';
@@ -9,6 +9,8 @@ import { green } from '@mui/material/colors';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { CiShoppingCart } from "react-icons/ci";
+import { SearchBar } from './Components/SearchBar';
+import { SearchResultsList } from './Components/SearchResultsList';
 const theme = createTheme({
   palette: {
     primary: {
@@ -23,6 +25,7 @@ const buttons = [
 ];
 
 function Navbar() {
+  const [results, setResults] = useState([]);
   return (
     <nav className="navbar">
 <div><img className='logo' src={Logo} ></img></div>
@@ -39,12 +42,9 @@ function Navbar() {
   <span>About Us</span>
   <span>Sign In</span>
   <CiShoppingCart />
-  <div id="custom-search-input">
-                <div class="input-group">
-                    <input type="text" class="search-query form-control" placeholder="Search here..."></input>
-                </div>
-       
-			</div>
+  
+  <SearchBar setResults={setResults}/>
+      {results && results.length > 0 && <SearchResultsList results={results} />}
       {/* <div className="signIn">Sign In</div> */}
       </div>
 {/* <Button className="signIn" >Sign In</Button> */}

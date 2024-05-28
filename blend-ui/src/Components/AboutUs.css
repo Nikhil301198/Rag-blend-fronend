@@ -1,0 +1,35 @@
+.AboutUs{
+/* height : 20rem; */
+width :100%;
+background-color: rgb(255, 94, 0);
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.Footer{
+    height : 3rem;
+    width :100%;
+    background-color: rgb(255, 94, 0);
+}
+
+.info{
+    height:250px;
+width:250px;
+border:1px solid white;
+}
+
+.care{
+    width:250px;
+    border:1px solid white;   
+}
+
+.info1{
+    width:250px;
+    border:1px solid white; 
+}
+
+.contact{
+    width:250px;
+border:1px solid white;
+}

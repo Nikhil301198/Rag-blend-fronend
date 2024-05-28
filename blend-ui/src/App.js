@@ -1,9 +1,11 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import Navbar from './Navbar';
 import images from './assets/image'
 import CustomSlider from "./Slidercomponent";
-import Card from './Components/Card'
+import Card from './Components/Card' 
 import './App.css'
+
+import AboutUs from './Components/AboutUs';
 const products = [
   {
     id: 1,
@@ -58,8 +60,12 @@ const products = [
 
 
 function App() {
+
+
   return (
+    
     <div>
+     
       <Navbar />
       <CustomSlider>{images.map((image, index) => {
           return <img key={index} src={image.imgURL} alt={image.imgAlt} />;
@@ -68,6 +74,7 @@ function App() {
          <div className='cards'>  {products.map((product) => (
         <Card key={product.id} product={product} />
       ))}</div>
+      <AboutUs></AboutUs>
     </div>
   );
 }
